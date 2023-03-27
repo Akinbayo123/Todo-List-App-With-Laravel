@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<link rel="stylesheet" href="bootstrap.min.css">
+
+<body>
+    <header class="py-3 mb-4 border-bottom bg-white">
+        <div class="d-flex flex-wrap justify-content-center container">
+            <a href="todo.php" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none">
+                <span class="fs-4">Todo List</span>
+            </a>
+
+            <ul class="nav nav-pills">
+                <li class="nav-item"><a href="todo.php" class="nav-link active" aria-current="page">Home</a></li>
+                <li class="nav-item"><a href="add-todo.php" class="nav-link text-dark">Add Todo</a></li>
+                <li class="nav-item"><a href="logout.php" class="nav-link bg-danger text-white">Logout</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <div class="container py-5">
+        <div class="row">
+            <div class="col-md-5 mx-auto">
+                <div class="card bg-white rounded border shadow">
+                    <div class="card-header px-4 py-3">
+                        <h4 class="card-title">Add Todo</h4>
+                    </div>
+                    <div class="card-body p-4">
+                        <?php echo $msg; ?>
+                        <form action="" method="POST">
+                            <div class="mb-3">
+                                <label for="title" class="form-label">Title</label>
+                                <input type="text" class="form-control" id="title" name="title" placeholder="e.g. Create a PHP program" value="<?php if (isset($_POST[" addTodo "])) {
+                                                                                                                                                    echo $_POST["title "];
+                                                                                                                                                } ?>" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="desc" class="form-label">Description</label>
+                                <textarea class="form-control" id="desc" name="desc" rows="3" required><?php if (isset($_POST["addTodo"])) {
+                                                                                                            echo $_POST["desc"];
+                                                                                                        } ?></textarea>
+                            </div>
+                            <div>
+                                <button type="submit" name="addTodo" class="btn btn-primary me-2">Add Todo</button>
+                                <button type="reset" class="btn btn-danger">Reset</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <script src="bootstrap.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
+</body>
+
+</html>
